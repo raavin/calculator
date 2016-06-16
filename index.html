@@ -6,33 +6,37 @@
 	<title>Calculator</title>
 	<link href='https://fonts.googleapis.com/css?family=Orbitron:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="style.css">
+	<script src=
+    "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+    </script>
+	<script src="javascript.js"></script>
 </head>
 <body>
 <div class="container">
 	<div class="result-box">
-		<div class="result-output">987654</div>
+		<div class="result-output">0</div>
 	</div>
 	<div>
-		<div class="button"><div class="indent">AC</div></div>
-		<div class="button"><div class="indent">CE</div></div>
-		<div class="button"><div class="indent">%</div></div>
-		<div class="button"><div class="indent">/</div></div>
-		<div class="button"><div class="indent">7</div></div>
-		<div class="button"><div class="indent">8</div></div>
-		<div class="button"><div class="indent">9</div></div>
-		<div class="button"><div class="indent">*</div></div>
-		<div class="button"><div class="indent">4</div></div>
-		<div class="button"><div class="indent">5</div></div>
-		<div class="button"><div class="indent">6</div></div>
-		<div class="button"><div class="indent">-</div></div>
-		<div class="button"><div class="indent">1</div></div>
-		<div class="button"><div class="indent">2</div></div>
-		<div class="button"><div class="indent">3</div></div>
-		<div class="button"><div class="indent">+</div></div>
-		<div class="button"><div class="indent">.</div></div>
-		<div class="button"><div class="indent">0</div></div>
-		<div class="button"><div class="indent">Ans</div></div>
-		<div class="button"><div class="indent">=</div></div>
+		<div class="button" id="ac"><div class="indent">AC</div><div style="display: block; clear: both;"></div></div>
+		<div class="button" id="ce"><div class="indent">CE</div></div>
+		<div class="button" id="percent"><div class="indent">%</div></div>
+		<div class="button" id="divide"><div class="indent">/</div></div>
+		<div class="button" id="seven"><div class="indent">7</div></div>
+		<div class="button" id="eight"><div class="indent">8</div></div>
+		<div class="button" id="nine"><div class="indent">9</div></div>
+		<div class="button" id="multiply"><div class="indent">*</div></div>
+		<div class="button" id="four"><div class="indent">4</div></div>
+		<div class="button" id="five"><div class="indent">5</div></div>
+		<div class="button" id="six"><div class="indent">6</div></div>
+		<div class="button" id="minus"><div class="indent">-</div></div>
+		<div class="button" id="one"><div class="indent">1</div></div>
+		<div class="button" id="two"><div class="indent">2</div></div>
+		<div class="button" id="three"><div class="indent">3</div></div>
+		<div class="button" id="plus"><div class="indent">+</div></div>
+		<div class="button" id="period"><div class="indent">.</div></div>
+		<div class="button" id="zero"><div class="indent">0</div></div>
+		<div class="button" id="ans"><div class="indent">Ans</div></div>
+		<div class="button" id="equal"><div class="indent">=</div></div>
 		<div style="display: block; clear: both;"></div>
 	</div>
 	
