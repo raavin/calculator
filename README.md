@@ -4,3 +4,5 @@ freecodecamp calculator project
  - put current operator in top right of screen
  - make CE clear whole number rather than last digit
  - Gives a good exponent result but eval doesn't handle this correctly so fails if you use 'ans' key
+ - prevent multiple operators being entered
+ - - if last in array isNaN skip
