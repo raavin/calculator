@@ -9,7 +9,7 @@ jQuery(document).ready(function($) {
 	"period", "zero"
 	]
 	var calcValues = [
-	"/100*", "/",
+	"/10*", "/",
 	"7", "8", "9", "*",
 	"4", "5", "6", "-",
 	"1", "2", "3", "+",
@@ -29,7 +29,7 @@ jQuery(document).ready(function($) {
 
 	$( "#ac" ).click(function() {
 			
-			ans = eval(current.join(""));
+			
 			current = [];
 			console.log(current + ": value");
 	  		$(".result-output").html(0);
@@ -41,7 +41,14 @@ jQuery(document).ready(function($) {
 	});
 
 	$( "#equal" ).click(function() {
-	  		$(".result-output").html(eval(current.join("")));
+		try{
+			ans = (Math.floor((eval(current.join(""))) * Math.pow(10, 13))) / Math.pow(10, 13);
+	  		$(".result-output").html((Math.floor((eval(current.join(""))) * Math.pow(10, 13))) / Math.pow(10, 13));
+		}
+		catch(err){
+
+		}
+			
 	});
 
 	$( "#ans" ).click(function() {
@@ -49,4 +56,7 @@ jQuery(document).ready(function($) {
 	  		$(".result-output").html(eval(current.join("")));
 	});
 	
+	function floatCompensate(num){
+		(Math.floor((eval(num.join(""))) * Math.pow(10, 13))) / Math.pow(10, 13)
+	};
 });
