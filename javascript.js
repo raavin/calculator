@@ -14,22 +14,33 @@ jQuery(document).ready(function($) {
 	"1", "2", "3", "+",
 	".", "0"
 	]; 
+	var calcDisplay = [ // Values for eval()
+	"%", "/",
+	"7", "8", "9", "*",
+	"4", "5", "6", "-",
+	"1", "2", "3", "+",
+	".", "0"
+	]; 
 
 	var current = [0]; // Holds the array for eval
-	var display = [0]; // Holds Array for display
+	var display = []; // Holds Array for display
 	var ans = 0
 
 	calcKeys.forEach( function(element, index) { //iterate through ID names 
 
 		$( "#" + element.toString() ).click(function() { // create click for IDs
-			console.log(calcValues[index]);
+			console.log(calcValues[index] +": calcValues[index]");
+			console.log("last element is a number is " + $.isNumeric(current[current.length - 1]));
+			console.log("current element is a number is " + $.isNumeric(calcValues[index]));
 
-			if ($.isNumeric(calcValues[index] && $.isNumeric(current[current.length]))){
-					current.push(calcValues[index]);
-					display.push(calcValues[index]);
-					$(".result-output").html(display);
+			if ( !(/^[0-9]*$/).test(current[current.length - 1].toString()) && !(/^[0-9]*$/).test(calcValues[index])){//if key is number and last in current array is number
+					
 			} else {
-					display = [0];
+			//		display = [0];
+				console.log("I'm here!!!!");
+				current.push(calcValues[index]);
+				display.push(calcDisplay[index]);
+				$(".result-output").html(display);	
 			}
 	  		//$.isNumeric(calcValues[index]) ? current.push(calcValues[index]) : ; //if clicked, push value to array
 	  		//$.isNumeric(calcValues[index]) ? display.push(calcValues[index]) : display = []; // if entry is a number push value display array
@@ -40,7 +51,7 @@ jQuery(document).ready(function($) {
 	});
 
 	$( "#ac" ).click(function() {
-			current = [];						// clear array
+			current = [0];						// clear array
 			display = [];						// clear array
 			console.log(current + ": value");
 			console.log(current + ":curr");
