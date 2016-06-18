@@ -27,5 +27,7 @@ You can keep adding to the previous result like a calculator by doing for exampl
 #### Adding 'ans' to end of expression
 
 If a User enters and expression 1 + 1 and hits '='
+
 When they enter another partial experession like '1 +' and hit 'ans'
+
 Then they get the result '3' instead of '1 + 2'
