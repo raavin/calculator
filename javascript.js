@@ -33,11 +33,11 @@ jQuery(document).ready(function($) {
 					console.log("last element is a number is " + $.isNumeric(current[current.length - 1]));
 					console.log("current element is a number is " + $.isNumeric(calcValues[index]));
 
-			if ( !(/^[0-9]*$/).test(current[current.length - 1].toString()) && !(/^[0-9]*$/).test(calcValues[index])){//if key is number and last in current array is number
-					
+			if ( !(/^[0-9]*$/).test(current[current.length - 1].toString()) && !(/^[0-9]*$/).test(calcValues[index])){//if key is not a number and last in current array is not a number
+					console.log("Not a number Key!!");
 			} else {
-			//		display = [0];
-					console.log("I'm here!!!!");
+					
+
 				current.push(calcValues[index]);
 				display.push(calcDisplay[index]);
 				$(".result-output").html(display);	
@@ -58,7 +58,10 @@ jQuery(document).ready(function($) {
 
 	$( "#ce" ).click(function() {				
 	  		current.pop();						// pop last character off the end of the array when ce is pressed
-	  		$(".result-output").html(0);		// set output to zero
+	  		display.pop();
+	  		$(".result-output").html(floatCompensate(current.join("")));		// set output to zero
+	  				console.log(current + ":curr");
+					console.log(display + ":disp");
 	});
 
 	$( "#equal" ).click(function() {
@@ -78,7 +81,9 @@ jQuery(document).ready(function($) {
 
 	$( "#ans" ).click(function() {
 			current.push(ans);
-	  		$(".result-output").html(eval(current.join("")));
+	  		$(".result-output").html(eval(floatCompensate(current.join(""))));
+	  				console.log(current + ":curr");
+					console.log(display + ":disp");
 	});
 	
 	function floatCompensate(expressionString){

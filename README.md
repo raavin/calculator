@@ -21,3 +21,11 @@ You can keep adding to the previous result like a calculator by doing for exampl
 - If you multiply large numbers for example you get a result in the exponent format, which is nice for output but currently isn't parsed to be reused
 - 'ans' key seems to be malfunctioning. Need to fix that!!!
 - currently follows order of operations which is counterintuitive in regards to normal calculator operation. Need to fix so that next operation is enacted on previous result.
+
+### Error Replication
+
+#### Adding 'ans' to end of expression
+
+If a User enters and expression 1 + 1 and hits '='
+When they enter another partial experession like '1 +' and hit 'ans'
+Then they get the result '3' instead of '1 + 2'
