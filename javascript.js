@@ -8,7 +8,7 @@ jQuery(document).ready(function($) {
 	"period", "zero"
 	];
 	var calcValues = [ // Values for eval()
-	"/10*", "/",
+	"/100*", "/",
 	"7", "8", "9", "*",
 	"4", "5", "6", "-",
 	"1", "2", "3", "+",
@@ -69,7 +69,7 @@ jQuery(document).ready(function($) {
 			ans = floatCompensate(current.join(""));						//					
 	  		$(".result-output").html(floatCompensate(current.join("")));
 	  		display = [];													// clear display array
-	  		current = [ans];												// put previous result in current array 
+	  		current = [0,ans];												// put previous result in current array 
 	  		console.log(current + ":curr");
 			console.log(display + ":disp");
 		}
@@ -84,8 +84,10 @@ jQuery(document).ready(function($) {
 	  		$(".result-output").html(eval(current.join("")));
 	});
 	
-	function floatCompensate(num){
-		return (Math.floor((eval(num)) * Math.pow(10, 13))) / Math.pow(10, 13)
+	function floatCompensate(expressionString){
+		//newnum = num.split("").shift();
+		//console.log(newnum + ": num");
+		return (Math.floor((eval(expressionString.slice(1,expressionString.length))) * Math.pow(10, 13))) / Math.pow(10, 13)
 	};
 
 });
