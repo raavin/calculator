@@ -29,33 +29,30 @@ jQuery(document).ready(function($) {
 	calcKeys.forEach( function(element, index) { //iterate through ID names 
 
 		$( "#" + element.toString() ).click(function() { // create click for IDs
-			console.log(calcValues[index] +": calcValues[index]");
-			console.log("last element is a number is " + $.isNumeric(current[current.length - 1]));
-			console.log("current element is a number is " + $.isNumeric(calcValues[index]));
+					console.log(calcValues[index] +": calcValues[index]");
+					console.log("last element is a number is " + $.isNumeric(current[current.length - 1]));
+					console.log("current element is a number is " + $.isNumeric(calcValues[index]));
 
 			if ( !(/^[0-9]*$/).test(current[current.length - 1].toString()) && !(/^[0-9]*$/).test(calcValues[index])){//if key is number and last in current array is number
 					
 			} else {
 			//		display = [0];
-				console.log("I'm here!!!!");
+					console.log("I'm here!!!!");
 				current.push(calcValues[index]);
 				display.push(calcDisplay[index]);
 				$(".result-output").html(display);	
 			}
-	  		//$.isNumeric(calcValues[index]) ? current.push(calcValues[index]) : ; //if clicked, push value to array
-	  		//$.isNumeric(calcValues[index]) ? display.push(calcValues[index]) : display = []; // if entry is a number push value display array
-	  		//$.isNumeric(calcValues[index]) ? $(".result-output").html(display) : ""; // if entry is a number display it, else clear display
-	  		console.log(current + ":curr");
-			console.log(display + ":disp");
+			  		console.log(current + ":curr");
+					console.log(display + ":disp");
 		});
 	});
 
 	$( "#ac" ).click(function() {
 			current = [0];						// clear array
 			display = [];						// clear array
-			console.log(current + ": value");
-			console.log(current + ":curr");
-			console.log(display + ":disp");
+					console.log(current + ": value");
+					console.log(current + ":curr");
+					console.log(display + ":disp");
 	  		$(".result-output").html(0);		// Set display to zero
 	});
 
@@ -70,8 +67,8 @@ jQuery(document).ready(function($) {
 	  		$(".result-output").html(floatCompensate(current.join("")));
 	  		display = [];													// clear display array
 	  		current = [0,ans];												// put previous result in current array 
-	  		console.log(current + ":curr");
-			console.log(display + ":disp");
+			  		console.log(current + ":curr");
+					console.log(display + ":disp");
 		}
 		catch(err){
 
@@ -85,7 +82,6 @@ jQuery(document).ready(function($) {
 	});
 	
 	function floatCompensate(expressionString){
-		//newnum = num.split("").shift();
 		//console.log(newnum + ": num");
 		return (Math.floor((eval(expressionString.slice(1,expressionString.length))) * Math.pow(10, 13))) / Math.pow(10, 13)
 	};
